@@ -20,23 +20,23 @@ public class Calculator {
         return b / x;
     }
 
-    public int sumAllOperation(int c, int d, int e, int f) {
-        return c + d + e + f;
+    public int sumAllOperation(int c) {
+        Calculator calculator = new Calculator();
+        Calculator calc = new Calculator();
+        return sum(c) + minus(c) + calculator.multiply(c) + calc.divide(c);
     }
 
     public static void main(String[] args) {
-        int result = sum(1);
-        System.out.println(result);
-        int result2 = minus(1);
-        System.out.println(result2);
+        System.out.println(sum(10));
+        System.out.println(minus(10));
         Calculator calculator = new Calculator();
-        int rsl = calculator.multiply(1);
+        int rsl = calculator.multiply(10);
         System.out.println(rsl);
         Calculator calc = new Calculator();
-        int rls = calc.divide(5);
+        int rls = calc.divide(10);
         System.out.println(rls);
         Calculator sumAll = new Calculator();
-        int slr = sumAll.sumAllOperation(result, result2, rsl, rls);
+        int slr = sumAll.sumAllOperation(10);
         System.out.println("Сумма значений всех операций: " + slr);
     }
 }
