@@ -27,10 +27,9 @@ public class Library {
             System.out.println(ar.getName() + " - " + ar.getCount());
         }
         System.out.println("Найдем книгу - Clean code:");
-        String cleanCode = "Clean code";
         for (int index = 0; index < array.length; index++) {
             Book ar = array[index];
-            if (Objects.equals(ar.getName(), cleanCode)) {
+            if (Objects.equals(ar.getName(), "Clean code")) {
                 System.out.println(ar.getName() + " - " + ar.getCount());
             }
         }
