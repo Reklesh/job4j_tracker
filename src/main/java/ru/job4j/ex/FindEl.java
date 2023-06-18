@@ -9,6 +9,7 @@ public class FindEl {
         for (int index = 0; index < value.length; index++) {
             if (Objects.equals(value[index], key)) {
                 rsl = index;
+                break;
             }
         }
         if (rsl == -1) {
