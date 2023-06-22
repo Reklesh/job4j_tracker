@@ -23,11 +23,12 @@ public class ValidateInputTest {
                 new String[]{"1", "2", "3"}
         );
         ValidateInput input = new ValidateInput(out, in);
-        int count = 1;
-        for (int index = 0; index < new String[]{"1", "2", "3"}.length; index++) {
-            int selected = input.askInt("Enter menu:");
-            assertThat(selected).isEqualTo(count++);
-        }
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(1);
+        selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(2);
+        selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(3);
     }
 
     @Test
