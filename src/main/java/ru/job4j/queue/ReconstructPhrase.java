@@ -5,7 +5,6 @@ import java.util.Deque;
 public class ReconstructPhrase {
 
     private final Deque<Character> descendingElements;
-
     private final Deque<Character> evenElements;
 
     public ReconstructPhrase(Deque<Character> descendingElements, Deque<Character> evenElements) {
@@ -14,8 +13,9 @@ public class ReconstructPhrase {
     }
 
     private String getEvenElements() {
+        int length = evenElements.size() / 2;
         StringBuilder builder = new StringBuilder();
-        for (int index = 0; index < evenElements.size() + builder.length(); index++) {
+        for (int index = 0; index < length; index++) {
             builder.append(evenElements.poll());
             evenElements.poll();
         }
@@ -23,8 +23,9 @@ public class ReconstructPhrase {
     }
 
     private String getDescendingElements() {
+        int length = descendingElements.size();
         StringBuilder stringBuilder = new StringBuilder();
-        for (int index = 0; index < descendingElements.size() + stringBuilder.length(); index++) {
+        for (int index = 0; index < length; index++) {
             stringBuilder.append(descendingElements.pollLast());
         }
         return String.valueOf(stringBuilder);
