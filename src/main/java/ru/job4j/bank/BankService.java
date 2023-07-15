@@ -10,12 +10,7 @@ public class BankService {
     }
 
     public boolean deleteUser(String passport) {
-        List<Account> accounts = null;
-        User user = findByPassport(passport);
-        if (user != null) {
-            accounts = users.remove(user);
-        }
-        return accounts != null;
+        return users.remove(new User(passport, "")) != null;
     }
 
     public void addAccount(String passport, Account account) {
