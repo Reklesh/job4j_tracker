@@ -183,6 +183,5 @@ public class StartUITest {
                         + "0. Exit Program" + ln
                         + "=== Exit Program ===" + ln
         );
-
     }
 }

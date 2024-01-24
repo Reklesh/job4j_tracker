@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class MemTrackerTest {
     @Test
@@ -90,7 +91,8 @@ public class MemTrackerTest {
         MemTracker memTracker = new MemTracker();
         Item item = new Item("Bug");
         memTracker.add(item);
-        memTracker.delete(1000);
+        assertThatThrownBy(() -> memTracker.delete(1000))
+                .isInstanceOf(IllegalArgumentException.class);
         assertThat(memTracker.findById(item.getId()).getName()).isEqualTo("Bug");
     }
 }

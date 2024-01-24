@@ -25,7 +25,7 @@ public class SqlTracker implements Store {
                 .getResourceAsStream("app.properties")) {
             Properties config = new Properties();
             config.load(input);
-            Class.forName(config.getProperty("driver-class-name"));
+            Class.forName(config.getProperty("driver_class_name"));
             connection = DriverManager.getConnection(
                     config.getProperty("url"),
                     config.getProperty("username"),
