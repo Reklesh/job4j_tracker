@@ -1,10 +1,10 @@
 package ru.job4j.tracker;
 
-public class FindIdAction implements UserAction {
+public class FindByIdAction implements UserAction {
 
     private final Output out;
 
-    public FindIdAction(Output out) {
+    public FindByIdAction(Output out) {
         this.out = out;
     }
 
@@ -14,10 +14,10 @@ public class FindIdAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store memTracker) {
         out.println("=== Find item by id ===");
         int id = input.askInt("Enter id: ");
-        Item item = tracker.findById(id);
+        Item item = memTracker.findById(id);
         if (item != null) {
             out.println(item);
         } else {
