@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class SqlTracker implements Store {
 
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
     private Connection connection;
 
     public SqlTracker() {
