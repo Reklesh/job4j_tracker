@@ -136,4 +136,5 @@ public class SqlTrackerTest {
         tracker.delete(1000);
         assertThat(tracker.findById(item.getId())).isEqualTo(item);
     }
+
 }
