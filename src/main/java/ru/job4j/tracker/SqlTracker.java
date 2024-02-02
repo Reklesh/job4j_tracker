@@ -5,6 +5,7 @@ import java.sql.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
 import java.util.Properties;
 
 public class SqlTracker implements Store {
@@ -141,5 +142,4 @@ public class SqlTracker implements Store {
         }
         return item;
     }
-
 }

@@ -12,7 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
-
 import static org.assertj.core.api.Assertions.*;
 
 public class SqlTrackerTest {
@@ -136,5 +135,4 @@ public class SqlTrackerTest {
         tracker.delete(1000);
         assertThat(tracker.findById(item.getId())).isEqualTo(item);
     }
-
 }
