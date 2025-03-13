@@ -23,7 +23,7 @@ public class DeleteAction implements UserAction {
             out.println("Заявка удалена успешно.");
             rev = true;
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            out.println(e.getMessage());
         }
         return rev;
     }
