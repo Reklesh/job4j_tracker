@@ -1,10 +1,13 @@
 package ru.job4j.tracker;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import java.util.Objects;
 
+@Data
 public class Item {
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
@@ -35,33 +38,9 @@ public class Item {
         this.created = created;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public LocalDateTime getCreated() {
-        return created;
-    }
-
     @Override
     public String toString() {
-        return "Item{"
-                + "created='" + created.format(FORMATTER) + '\''
-                + ", id=" + id
-                + ", name='" + name + '\''
-                + '}';
+        return "Item{created='%s', id=%s, name='%s'}".formatted(created.format(FORMATTER), id, name);
     }
 
     @Override
