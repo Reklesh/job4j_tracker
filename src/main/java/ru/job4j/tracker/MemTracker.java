@@ -44,13 +44,13 @@ public class MemTracker implements Store {
     }
 
     @Override
-    public Item findById(int id) {
+    public Item findById(Integer id) {
         int index = indexOf(id);
         return index != -1 ? items.get(index) : null;
     }
 
     @Override
-    public boolean replace(int id, Item item) {
+    public boolean replace(Integer id, Item item) {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
@@ -61,7 +61,7 @@ public class MemTracker implements Store {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         int index = indexOf(id);
         if (index == -1) {
             throw new IllegalArgumentException(String.format(
