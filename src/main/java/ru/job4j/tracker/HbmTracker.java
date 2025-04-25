@@ -38,7 +38,7 @@ public class HbmTracker implements Store {
         try {
             session.beginTransaction();
             Query<Item> query = session.createQuery(
-                            "UPDATE Item SET name = :fName, created = :fCreated WHERE id = :fId", Item.class)
+                            "UPDATE Item SET name = :fName, created = :fCreated WHERE id = :fId")
                     .setParameter("fName", item.getName())
                     .setParameter("fCreated", item.getCreated())
                     .setParameter("fId", id);
@@ -57,7 +57,7 @@ public class HbmTracker implements Store {
         Session session = sf.openSession();
         try {
             session.beginTransaction();
-            session.createQuery("DELETE Item WHERE id = :fId", Item.class)
+            session.createQuery("DELETE Item WHERE id = :fId")
                     .setParameter("fId", id)
                     .executeUpdate();
             session.getTransaction().commit();
